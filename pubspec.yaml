@@ -1,0 +1,60 @@
+name: mirize
+description: A new Flutter project.
+
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  firebase_core: ^0.5.0
+  storage_path: ^0.2.0
+  fluttericon: ^1.0.7
+  firebase_analytics: ^6.0.0
+  firebase_auth: ^0.18.0+1
+  firebase_storage: ^4.0.0
+  firebase_database: ^4.0.0
+  simple_animations: ^2.2.2
+  cupertino_icons: ^1.0.0
+  camera: ^0.5.8+11
+  custom_image_picker: ^0.0.3
+  path_provider: ^1.6.22
+  uuid: ^2.2.2
+  path: ^1.7.0
+  flutter_lantern: ^0.0.1
+  gallery_saver: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_launcher_icons: "^0.8.0"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo_true_background/logo_full.png"
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+    - assets/lang/
+
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Bold.ttf

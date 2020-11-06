@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "61555486375",
+    "firebase_url": "https://mirize-475c3.firebaseio.com",
+    "project_id": "mirize-475c3",
+    "storage_bucket": "mirize-475c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61555486375:android:019ccb027a2b7585653582",
+        "android_client_info": {
+          "package_name": "com.mirgroup.mirize"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61555486375-n59rquvt0u5dpudmhr1sbob2nlic6nc4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mirgroup.mirize",
+            "certificate_hash": "6fb21f0c362609498e9007d43725544bff6fdee0"
+          }
+        },
+        {
+          "client_id": "61555486375-tefskrguu060glldm2uso713lh93ag6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdFsNfqEFk3xASv8YtAPOmBGP4Ebvlz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61555486375-tefskrguu060glldm2uso713lh93ag6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
