@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mirize/windows/feed_screen.dart';
-import 'package:mirize/windows/logged_screen.dart';
-import 'package:mirize/windows/register_user_screen.dart';
+import 'package:mirize/screens/feed_screen.dart';
+import 'package:mirize/screens/logged_screen.dart';
 
 class AuthService {
   bool isTrueAuthUser;

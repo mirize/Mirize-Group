@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:fluttericon/typicons_icons.dart';
-import 'package:mirize/animation/FadeAnimation.dart';
-import 'package:mirize/service/auth_service.dart';
-import 'package:mirize/windows/ad_shop_screen.dart';
-import 'package:mirize/windows/camera.dart';
+import 'package:mirize/screens/ad_shop_screen.dart';
+import 'package:mirize/screens/camera.dart';
+import 'package:mirize/tools/animation/FadeAnimation.dart';
+import 'package:mirize/tools/user/auth_and_register/service/auth_service.dart';
 
 class FeedScreen extends StatefulWidget {
   FeedScreen({Key key}) : super(key: key);

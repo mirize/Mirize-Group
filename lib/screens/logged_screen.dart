@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mirize/app_localizations.dart';
 import 'package:mirize/main.dart';
-import 'package:mirize/service/auth_service.dart';
-import 'package:mirize/windows/register_user_screen.dart';
+
+import '../tools/user/auth_and_register/service/auth_service.dart';
+import 'register_user_screen.dart';
 
 class LoggedScreen extends StatefulWidget {
   @override

@@ -28,10 +28,24 @@ dependencies:
   camera: ^0.5.8+11
   custom_image_picker: ^0.0.3
   path_provider: ^1.6.22
-  uuid: ^2.2.2
   path: ^1.7.0
   flutter_lantern: ^0.0.1
   gallery_saver: ^2.0.1
+  cached_network_image: ^2.2.0+1
+  provider: ^4.3.2+2
+  cloud_firestore:
+  uuid: ^2.0.0
+  http: 
+  image_picker: ^0.6.2
+  package_info: ^0.4.1
+  shared_preferences: ^0.5.1+2
+  firebase_messaging: ^6.0.13
+  google_sign_in: "^4.5.1" 
+  intl: ^0.16.1
+  url_launcher:
+  share: ^0.6.3
+  google_fonts: ^0.3.9
+  firebase_remote_config: ^0.3.0+3
 
 dev_dependencies:
   flutter_test:
@@ -58,3 +72,6 @@ flutter:
     - family: Nunito
       fonts:
         - asset: assets/fonts/Nunito-Bold.ttf
+    - family: TwitterIcon
+      fonts:
+        - asset: assets/fonts/icons.ttf

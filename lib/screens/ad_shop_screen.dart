@@ -1,5 +1,6 @@
-import 'package:mirize/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
+
+import '../tools/animation/FadeAnimation.dart';
 
 class AdShopScreen extends StatefulWidget {
   final String image;
