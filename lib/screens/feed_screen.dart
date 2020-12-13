@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:fluttericon/typicons_icons.dart';
-import 'package:mirize/screens/ad_shop_screen.dart';
-import 'package:mirize/screens/camera.dart';
-import 'package:mirize/tools/animation/FadeAnimation.dart';
-import 'package:mirize/tools/user/auth_and_register/service/auth_service.dart';
+import 'package:mirize/page/posting/camera/camera.dart';
 
 class FeedScreen extends StatefulWidget {
   FeedScreen({Key key}) : super(key: key);
@@ -98,7 +95,7 @@ class _FeedScreenState extends State<FeedScreen> {
                     //   context,
                     //   MaterialPageRoute(builder: (_) => CreatingPostsScreens()),
                     // );
-                    AuthService().signOut();
+                    // AuthService().signOut();
                   }),
             ],
           ),
@@ -135,10 +132,10 @@ class _FeedScreenState extends State<FeedScreen> {
                 MaterialPageRoute(builder: (_) => FeedScreen()),
               );
             } else if (_currentIndex == 1) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => AdShopScreen()),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (_) => AdShopScreen()),
+              // );
             } else if (_currentIndex == 2) {
               Navigator.push(
                 context,
@@ -173,217 +170,4 @@ class _FeedScreenState extends State<FeedScreen> {
       ),
     );
   }
-}
-
-Widget makePostItem({image, tag, context}) {
-  return Hero(
-    tag: tag,
-    child: GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => AdShopScreen(
-                      image: image,
-                    )));
-      },
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.all(20),
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      FadeAnimation(
-                          1,
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                                color: Colors.grey.shade50,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Text(
-                              "Advertising",
-                              style: TextStyle(
-                                color: Colors.grey.shade700,
-                                fontSize: 28,
-                                fontFamily: "Nunito",
-                              ),
-                            ),
-                          )),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      FadeAnimation(
-                        1.1,
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 5),
-                          decoration: BoxDecoration(
-                              color: Colors.grey.shade100,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Text(
-                            "Mirize Group",
-                            style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: 20,
-                              fontFamily: "Nunito",
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                FadeAnimation(
-                    1.2,
-                    Container(
-                      width: 35,
-                      height: 35,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.grey.shade100),
-                      child: Center(
-                        child: Icon(Icons.favorite_border,
-                            size: 20, color: Colors.red),
-                      ),
-                    ))
-              ],
-            ),
-            FadeAnimation(
-                1.2,
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text(
-                    "100\$",
-                    style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontSize: 30,
-                        fontFamily: "Nunito"),
-                  ),
-                )),
-          ],
-        ),
-      ),
-    ),
-  );
-}
-
-Widget adMakeItem({image, tag, context}) {
-  return Hero(
-    tag: tag,
-    child: GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => AdShopScreen(
-                      image: image,
-                    )));
-      },
-      child: Container(
-        height: 300,
-        width: double.infinity,
-        padding: EdgeInsets.all(20),
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      FadeAnimation(
-                          1,
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                                color: Colors.grey.shade50,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Text(
-                              "Advertising",
-                              style: TextStyle(
-                                color: Colors.grey.shade700,
-                                fontSize: 28,
-                                fontFamily: "Nunito",
-                              ),
-                            ),
-                          )),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      FadeAnimation(
-                        1.1,
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 5),
-                          decoration: BoxDecoration(
-                              color: Colors.grey.shade100,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Text(
-                            "Mirize Group",
-                            style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: 20,
-                              fontFamily: "Nunito",
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                FadeAnimation(
-                    1.2,
-                    Container(
-                      width: 35,
-                      height: 35,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.grey.shade100),
-                      child: Center(
-                        child: Icon(Icons.favorite_border,
-                            size: 20, color: Colors.red),
-                      ),
-                    ))
-              ],
-            ),
-            FadeAnimation(
-                1.2,
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text(
-                    "5.69\$",
-                    style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontSize: 30,
-                        fontFamily: "Nunito"),
-                  ),
-                )),
-          ],
-        ),
-      ),
-    ),
-  );
 }

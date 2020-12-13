@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mirize/app_localizations.dart';
 import 'package:mirize/main.dart';
 
-import '../tools/user/auth_and_register/service/auth_service.dart';
 import 'register_user_screen.dart';
 
 class LoggedScreen extends StatefulWidget {
@@ -501,7 +500,7 @@ class _LoggedScreenState extends State<LoggedScreen>
         print("---------------------------");
         RegisterUser();
       } else {
-        AuthService().signIn(authResult);
+        // AuthService().signIn(authResult);
         print("---------------------------");
         print(firebaseResult.additionalUserInfo.isNewUser);
         print("---------------------------");

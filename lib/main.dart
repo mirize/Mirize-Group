@@ -1,18 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mirize/app_localizations.dart';
-import 'package:mirize/helper/theme.dart';
-import 'package:mirize/state/searchState.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'helper/routes.dart';
-import 'state/appState.dart';
+import 'package:mirize/tools/routes.dart';
+import 'package:mirize/tools/state/app_state.dart';
+import 'package:mirize/tools/state/database.dart';
 import 'package:provider/provider.dart';
-import 'state/authState.dart';
-import 'state/chats/chatState.dart';
-import 'state/feedState.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'state/notificationState.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,19 +39,10 @@ class _MyHomeState extends State<MyHome> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<AppState>(create: (_) => AppState()),
-        ChangeNotifierProvider<AuthState>(create: (_) => AuthState()),
-        ChangeNotifierProvider<FeedState>(create: (_) => FeedState()),
-        ChangeNotifierProvider<ChatState>(create: (_) => ChatState()),
-        ChangeNotifierProvider<SearchState>(create: (_) => SearchState()),
-        ChangeNotifierProvider<NotificationState>(
-            create: (_) => NotificationState()),
+        ChangeNotifierProvider<CloudFirestore>(create: (_) => CloudFirestore()),
       ],
       child: MaterialApp(
-        theme: AppTheme.apptheme.copyWith(
-          textTheme: GoogleFonts.muliTextTheme(
-            Theme.of(context).textTheme,
-          ),
-        ),
+        theme: ThemeData(fontFamily: "Nunito"),
         supportedLocales: [
           Locale("ru", "RU"),
           Locale('en', "US"),
@@ -93,7 +77,6 @@ class _MyHomeState extends State<MyHome> {
         debugShowCheckedModeBanner: false,
         routes: Routes.route(),
         onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
-        onUnknownRoute: (settings) => Routes.onUnknownRoute(settings),
         initialRoute: "SplashPage",
       ),
     );

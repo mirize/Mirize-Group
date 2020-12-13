@@ -18,15 +18,31 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('flutter_service_worker.js');
       });
     }
+  </script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyD55HA26R_LlUUHhvG95bR62nlZkSx_B8Q",
+        authDomain: "mirize-475c3.firebaseapp.com",
+        databaseURL: "https://mirize-475c3.firebaseio.com",
+        projectId: "mirize-475c3",
+        storageBucket: "mirize-475c3.appspot.com",
+        messagingSenderId: "61555486375",
+        appId: "1:61555486375:web:0af53ac62578e25a653582",
+        measurementId: "G-HTVYLNC3PN"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
