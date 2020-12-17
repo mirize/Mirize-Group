@@ -103,7 +103,7 @@ class _RegisterPageState extends State<RegisterPage> {
     });
   }
 
-  Widget getPhotoModalBottomSheet(context) {
+  getPhotoModalBottomSheet(context) {
     showModalBottomSheet(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(

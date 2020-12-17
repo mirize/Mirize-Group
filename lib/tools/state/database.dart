@@ -92,6 +92,27 @@ class CloudFirestore extends AppState {
     return;
   }
 
+  Future<void> createdComment(
+    BuildContext context,
+    String textComment,
+    String fromUserUID,
+    String uidPost,
+  ) async {
+    await Firebase.initializeApp();
+    String randomName;
+    randomName = Uuid().v4();
+    String uid = FirebaseAuth.instance.currentUser.uid;
+    CollectionReference ref = FirebaseFirestore.instance.collection("posts");
+    ref.doc(uidPost).collection("comment").doc(randomName).set({
+      "uidPost": uidPost,
+      "uidComment": randomName,
+      "textComment": textComment,
+      "fromUserUID": uid,
+      "timeCreated": DateTime.now().toUtc().toString(),
+    });
+    return;
+  }
+
   Future<void> createNewPost(
     BuildContext context,
     String imagePath,
@@ -108,6 +129,7 @@ class CloudFirestore extends AppState {
       "imagePath": imagePath,
       "textPost": textPost,
       "timeCreate": timeCreate,
+      "idPost": randomName,
     });
     CollectionReference refUser =
         FirebaseFirestore.instance.collection("users");
@@ -116,25 +138,6 @@ class CloudFirestore extends AppState {
       "timeCreate": timeCreate,
     }).whenComplete(() => Navigator.pushNamed(context, "/HomePage"));
     return;
-  }
-
-  Future getPostList() async {
-    await Firebase.initializeApp();
-    List postList = [];
-    try {
-      await FirebaseFirestore.instance
-          .collection("posts")
-          .get()
-          .then((QuerySnapshot snapshot) {
-        snapshot.docs.forEach((element) {
-          postList.add(element.data);
-        });
-      });
-      return postList;
-    } catch (e) {
-      print(e.toString());
-      return null;
-    }
   }
 
   Future<void> getUserFromUid(uid) async {

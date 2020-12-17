@@ -21,9 +21,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _body() {
     return SafeArea(
-      child: Container(
-        child: _getPage(Provider.of<AppState>(context).pageIndex),
-      ),
+      child: _getPage(Provider.of<AppState>(context).pageIndex),
     );
   }
 
@@ -58,7 +56,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: _scaffoldKey,
       bottomNavigationBar: BottomMenubar(),
-      // drawer: SidebarMenu(),
       body: _body(),
     );
   }

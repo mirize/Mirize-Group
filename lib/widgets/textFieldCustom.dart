@@ -146,4 +146,45 @@ class TextFieldCustom {
       onSubmitted: onSubmitted(),
     );
   }
+
+  Widget textFieldCommentedPost(
+      TextEditingController controller,
+      String hintText,
+      bool textAlignCenter,
+      bool autoFocus,
+      bool enabled,
+      bool error,
+      Function onChanged(),
+      Function onSubmitted()) {
+    return TextField(
+      controller: controller,
+      maxLines: 2,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        isCollapsed: true,
+        hintText: hintText,
+        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+        filled: true,
+        fillColor: error
+            ? Color.fromRGBO(255, 89, 100, 0.1)
+            : Color.fromRGBO(245, 245, 245, 1),
+      ),
+      textInputAction: TextInputAction.next,
+      enabled: enabled,
+      style: TextStyle(
+          color: error
+              ? Color.fromRGBO(255, 89, 100, 1)
+              : Color.fromRGBO(13, 2, 33, 1)),
+      autofocus: autoFocus,
+      textAlign: textAlignCenter ? TextAlign.center : TextAlign.start,
+      keyboardType: TextInputType.text,
+      onChanged: (value) {
+        onChanged();
+      },
+      onSubmitted: onSubmitted(),
+    );
+  }
 }
